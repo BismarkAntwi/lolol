@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Website</title>
+    <style>
+      /* CSS code here */
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li class="dropdown">
+          <a href="#">Products</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Product 1</a></li>
+            <li><a href="#">Product 2</a></li>
+            <li><a href="#">Product 3</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <script>
+      const dropdown = document.querySelector(".dropdown");
+      const dropdownMenu = document.querySelector(".dropdown-menu");
+
+      dropdown.addEventListener("mouseenter", () => {
+        dropdownMenu.style.display = "block";
+      });
+
+      dropdown.addEventListener("mouseleave", () => {
+        dropdownMenu.style.display = "none";
+      });
+    </script>
+  </body>
+</html>
+
+
+
+<div class="slideshow-container">
+  <div class="mySlides fade">
+    <img src="Getting started with Drones.html" alt="Slide 1">
+    <div class="caption">Caption 1</div>
+  </div>
+
+  <div class="mySlides fade">
+    <img src="genotype.html" alt="Slide 2">
+    <div class="caption">Caption 2</div>
+  </div>
+
+  <div class="mySlides fade">
+    <img src="image3.jpg" alt="Slide 3">
+    <div class="caption">Caption 3</div>
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+
+<style>
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {
+  display: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #180e0e;
+  padding: 10px;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  margin-top: -22px;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 10px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .prev,
+  .next {
+    font-size: 16px;
+    padding: 8px;
+  }
+}
+
+
+</style>
+
+
+
+<script>
+
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides((slideIndex += n));
+}
+
+function currentSlide(n) {
+  showSlides((slideIndex = n));
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
+}
+
+
+</script>
